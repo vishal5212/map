@@ -1,0 +1,83 @@
+-------------------------------------------------------------(constructor)-------------------------------------------
+#include<iostream>
+#include<map>
+
+using namespace std;
+int main(){
+
+map<string,int> strmap,str1,str2;
+strmap["asddf"]=10;/*CAN'T USE SINGLE QUOTES IN CASE OF STRINGS*/
+strmap["DSFSD"]=20;
+strmap["sdfsfer"]=30;
+strmap["charca"]=50;
+ 
+ str1(strmap.begin(),strmap.begin()+2);                                 /*NO MATCH FOR OPERATOR +*/
+ str2(strmap);
+ for(auto itr=strmap.begin();itr!=strmap.end();itr++){
+          cout<<itr->first<<' '<<itr->second<<endl;
+ }
+
+
+return 0;}
+at(),cbegin(),cend(),rbegin(),rend(),crbegin(),crend(),begin(),end()
+
+count(),erase(),clear(),
+-----------------------------------------------find(),-------------------------------------------------------------------
+Get iterator to element
+Searches the container for an element with a key equivalent to k and returns an iterator to it if found, otherwise it returns 
+an iterator to map::end.
+
+Two keys are considered equivalent if the container's comparison object returns false reflexively (i.e., no matter the order in 
+which the elements are passed as arguments).
+#include<iostream>
+#include<map>
+
+using namespace std;
+int main(){
+
+map<string,int> strmap,str1,str2;
+strmap["asddf"]=10;/*CAN'T USE SINGLE QUOTES IN CASE OF STRINGS*/
+strmap["DSFSD"]=20;
+strmap["sdfsfer"]=30;
+strmap["charca"]=50;
+ strmap.insert(pair<string,int>("wxwxwx",55));
+ 
+ strmap.erase(strmap.find("charca"));
+ //str1(<string,int>strmap.begin(),strmap.end());
+ //str2(strmap);
+ for(auto itr=strmap.begin();itr!=strmap.end();itr++){
+          cout<<itr->first<<' '<<itr->second<<endl;
+ }
+
+
+return 0;}
+
+
+
+----------------------------------------------insert(),---------------------------------------------------------------------------
+#include<iostream>
+#include<map>
+
+using namespace std;
+int main(){
+
+map<string,int> strmap,str1,str2;
+strmap["asddf"]=10;/*CAN'T USE SINGLE QUOTES IN CASE OF STRINGS*/
+strmap["DSFSD"]=20;
+strmap["sdfsfer"]=30;
+strmap["charca"]=50;
+ 
+ strmap.insert(pair<string,int>("wxwxwx",55));
+
+ for(auto itr=strmap.begin();itr!=strmap.end();itr++){
+          cout<<itr->first<<' '<<itr->second<<endl;
+ }
+
+
+return 0;}
+
+
+
+
+
+key_comp(),lower_bound(),upper_bound(),swap(),size(),value_comp(),empty()
