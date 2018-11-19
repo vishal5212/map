@@ -80,4 +80,40 @@ return 0;}
 
 
 
-key_comp(),lower_bound(),upper_bound(),swap(),size(),value_comp(),empty()
+----------------------------------------------------------key_comp(),------------------------------------------------------
+
+Return key comparison object
+Returns a copy of the comparison object used by the container to compare keys.
+
+The comparison object of a map object is set on construction. Its type (member key_compare) is the third template parameter of the 
+map template. By default, this is a less object, which returns the same as operator<.
+
+This object determines the order of the elements in the container: it is a function pointer or a function object that takes two 
+arguments of the same type as the element keys, and returns true if the first argument is considered to go before the second in the 
+strict weak ordering it defines, and false otherwise.
+
+Two keys are considered equivalent if key_comp returns false reflexively (i.e., no matter the order in which the keys are passed 
+as arguments).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lower_bound(),upper_bound(),swap(),size(),value_comp(),empty()
